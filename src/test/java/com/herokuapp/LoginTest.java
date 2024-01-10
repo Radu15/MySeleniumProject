@@ -58,7 +58,7 @@ public class LoginTest {
     }
     public static void sleep(int milisecond){
         try {
-            Thread.sleep(300);
+            Thread.sleep(3000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
