@@ -4,17 +4,18 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.Test;
+import test.tmp.AssertEqualsTest;
 
 public class LoginTest {
     @Test
     public void login(){
+        System.setProperty("webdriver.chrome.driver",
+                "src/main/resources/chromedriver.exe");
         //1.deschide pagina Form Autentification
         System.out.println("deschide pagina From autentification");
         WebDriver driver = new ChromeDriver();
-//        ChromeOptions options = new ChromeOptions();
-//        options.addArguments("--disable-infobars");
-//        options.addArguments("--remote-allow-origins=*");
         String url="https://the-internet.herokuapp.com/login";
         driver.get(url);
 
@@ -30,13 +31,26 @@ public class LoginTest {
 
         //3.click password & enter:SuprSecretPassword
         WebElement passworlInput= driver.findElement(By.id("password"));
-        passworlInput.sendKeys("SuperSecretPassword");
+        passworlInput.sendKeys("SuperSecretPassword!");
         sleep(2000);
 
         //4.Expect result: "Welcome to secure area " is displayed
         WebElement loginButon = driver.findElement(By.className("radius"));
         loginButon.click();
         sleep(2000);
+
+        WebElement secureAreaSubheader= driver.findElement(By.className("subheader"));
+        String subheaderContetn="Welcome to the Secure Area. When you are done click logout below.";
+        Assert.assertTrue(secureAreaSubheader.isDisplayed());
+        Assert.assertEquals(subheaderContetn, secureAreaSubheader.getText());
+
+        String secureUrl="https://the-internet.herokuapp.com/secure";
+        Assert.assertEquals(driver.getCurrentUrl(),secureUrl);
+
+        WebElement succesMesage=driver.findElement(By.id("flash"));
+        String succesMesageContent="You logged into a secure area!";
+        Assert.assertTrue(succesMesage.getText().contains(succesMesageContent));
+
 
         //5.Inchide pagina
         System.out.println("inchide pagina");
