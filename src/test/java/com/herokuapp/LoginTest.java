@@ -39,6 +39,7 @@ public class LoginTest {
         loginButon.click();
         sleep(2000);
 
+        System.out.println("verificam continutul subheaderului");
         WebElement secureAreaSubheader= driver.findElement(By.className("subheader"));
         String subheaderContetn="Welcome to the Secure Area. When you are done click logout below.";
         Assert.assertTrue(secureAreaSubheader.isDisplayed());
