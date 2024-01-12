@@ -21,10 +21,11 @@ public class FileDownloader {
         WebElement downloadLink = driver.findElement(By.linkText("Image.PNG"));
         downloadLink.click();
         Assert.assertTrue(downloadLink.isDisplayed());
+        sleep(9000);
     }
     public static void sleep(int milisecond){
         try {
-            Thread.sleep(3000);
+            Thread.sleep(9000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
