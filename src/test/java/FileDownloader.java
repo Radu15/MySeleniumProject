@@ -22,6 +22,7 @@ public class FileDownloader {
         downloadLink.click();
         Assert.assertTrue(downloadLink.isDisplayed());
         sleep(9000);
+        driver.close();
     }
     public static void sleep(int milisecond){
         try {
