@@ -8,8 +8,8 @@ import org.testng.annotations.Test;
 public class LoginTestNegativ {
     @Test
     public void LogintestNegativ(){
-        System.setProperty("webdriver.chrome.driver",
-              "src/main/resources/chromedriver.exe");
+       System.setProperty("webdriver.chrome.driver",
+             "src/main/resources/chromedriver.exe");
         //1.deschide pagina Form Autentification
         System.out.println("deschide pagina From autentification");
         WebDriver driver = new ChromeDriver();

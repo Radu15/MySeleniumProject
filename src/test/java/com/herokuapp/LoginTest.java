@@ -55,7 +55,7 @@ public class LoginTest {
 
         //5.Inchide pagina
         System.out.println("inchide pagina");
-        driver.close();
+       // driver.close();
     }
     public static void sleep(int milisecond){
         try {
