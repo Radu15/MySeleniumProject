@@ -20,11 +20,10 @@ public class FileDownloader {
         driver.manage().window().maximize();
         System.out.println("descarca");
         //sleep(2000);
-        WebElement downloadLink = driver.findElement(By.linkText("Image.PNG"));
+        WebElement downloadLink = driver.findElement(By.linkText("some-file.txt"));
         downloadLink.click();
-        Assert.assertTrue(downloadLink.isDisplayed());
-        sleep(9000);
-        driver.close();
+       Assert.assertTrue(downloadLink.isDisplayed());
+      // driver.close();
     }
     public static void sleep(int milisecond){
         try {

@@ -29,6 +29,7 @@ public class JavaScriptAlert {
         System.out.println("Alert Text: " + alert.getText());
         alert.accept();
         assertTrue(jsAlertButton.isEnabled());
+       // driver.close();
 
 
     }
