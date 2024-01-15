@@ -17,7 +17,6 @@ public class LoginTestNegativ {
         WebDriver driver = new ChromeDriver();
         String url="https://the-internet.herokuapp.com/login";
         driver.get(url);
-
         driver.manage().window().maximize();
         System.out.println("astepta 3 secunde");
         sleep(2000);
