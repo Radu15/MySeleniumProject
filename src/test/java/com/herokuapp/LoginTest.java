@@ -5,11 +5,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import test.tmp.AssertEqualsTest;
 
 public class LoginTest {
-    @Test
+
+
+    @Test//(priority = 1,en)
     public void login(){
         System.setProperty("webdriver.chrome.driver",
                 "src/main/resources/chromedriver.exe");

@@ -13,7 +13,7 @@
 
         </classes>
     </test>
-    <test name="invalid logout">
+    <test name="logout">
         <classes>
             <class name="com.herokuapp.Logout"/>
 
