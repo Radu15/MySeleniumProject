@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -27,16 +28,26 @@ public class TextboxTest {
         WebElement email = driver.findElement(By.id("userEmail"));
         WebElement currentAddress = driver.findElement(By.id("currentAddress"));
         WebElement permanentAddress = driver.findElement(By.id("permanentAddress"));
-        WebElement submitButton = driver.findElement(By.id("submit"));
 
-        fullName.sendKeys("Chis radu");
+        fullName.sendKeys("Chis Radu");
         email.sendKeys("raduchis@gmail.com");
         currentAddress.sendKeys("Floresti");
         permanentAddress.sendKeys("Peceiu");
 
-        sleep(90000);
+        WebElement outputname = driver.findElement(By.id("userName"));
+        WebElement outputEmail = driver.findElement(By.id("userEmail"));
+        WebElement outputCurrentAddress = driver.findElement(By.id("currentAddress"));
+        WebElement outputPermanentAddress = driver.findElement(By.id("permanentAddress"));
 
-            driver.close();
+        Assert.assertTrue(true, outputname.getText());
+        Assert.assertTrue(true, outputEmail.getText());
+        Assert.assertTrue(true, outputCurrentAddress.getText());
+        Assert.assertTrue(true, outputPermanentAddress.getText());
+
+
+        //sleep(90000);
+
+
 
     }
 
@@ -47,4 +58,11 @@ public class TextboxTest {
             throw new RuntimeException(e);
         }
     }
+    @AfterTest
+    public void tearDown(){
+        if (driver != null) {
+        driver.close();
+        }
+    }
+
 }
