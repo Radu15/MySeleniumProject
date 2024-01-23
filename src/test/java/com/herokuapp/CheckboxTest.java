@@ -62,7 +62,7 @@ public class CheckboxTest {
             }
             Assert.assertFalse(checkbox2.isSelected());
 
-            sleep(300);
+            //sleep(300);
         }
 
 
