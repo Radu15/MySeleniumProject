@@ -25,7 +25,7 @@ public class FileDownloader {
        Assert.assertTrue(downloadLink.isDisplayed());
       // driver.close();
     }
-    public static void sleep(int second){
+    public static void sleep(int milisecond){
         try {
             Thread.sleep(5);
         } catch (InterruptedException e) {

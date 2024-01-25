@@ -45,17 +45,18 @@ public class RadioTestButon {
             Assert.assertFalse(noRadio.isSelected());
             noRadio.click();
             Assert.assertFalse(noRadio.isSelected());
-            sleep(500);
+            //sleep(5);
         }
 
     private void sleep(int second) {
+        sleep(5);
     }
 
-    @AfterTest
+   // @AfterTest
     public void tearDown() {
         // Închide browser-ul la sfârșitul testului
         if (driver != null) {
-            driver.quit();
+            driver.close();
         }
     }
 }

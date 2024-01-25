@@ -45,7 +45,7 @@ public class TextboxTest {
         Assert.assertTrue(true, outputPermanentAddress.getText());
 
 
-        //sleep(90000);
+        sleep(9000);
 
 
 
@@ -53,7 +53,7 @@ public class TextboxTest {
 
     public static void sleep(int milisecond){
         try {
-            Thread.sleep(3000);
+            Thread.sleep(5000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
