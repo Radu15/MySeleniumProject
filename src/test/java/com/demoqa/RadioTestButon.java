@@ -30,6 +30,7 @@ public class RadioTestButon {
             // Identifică elementele radio button
             WebElement yesRadio = driver.findElement(By.xpath("//label[@for='yesRadio']"));
             WebElement impressiveRadio = driver.findElement(By.xpath("//label[@for='impressiveRadio']"));
+            WebElement noRadio = driver.findElement(By.xpath("//label[@for='noRadio']"));
 
             // Verifică dacă opțiunea "Yes" este bifată și dezactivează-o
             Assert.assertFalse(yesRadio.isSelected());
@@ -40,7 +41,15 @@ public class RadioTestButon {
             Assert.assertFalse(impressiveRadio.isSelected());
             impressiveRadio.click();
             Assert.assertFalse(impressiveRadio.isSelected());
+
+            Assert.assertFalse(noRadio.isSelected());
+            noRadio.click();
+            Assert.assertFalse(noRadio.isSelected());
+            sleep(500);
         }
+
+    private void sleep(int second) {
+    }
 
     @AfterTest
     public void tearDown() {
