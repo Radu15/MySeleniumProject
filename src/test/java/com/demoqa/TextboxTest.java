@@ -20,7 +20,9 @@ public class TextboxTest {
                 "src/main/resources/chromedriver.exe");
         driver = new ChromeDriver();
         driver.get(url);
-        driver.manage().window().maximize();
+        driver.manage().window().fullscreen();
+        WebElement consentButon= driver.findElement(By.xpath("//button[@aria-label=\"Consent\"]"));
+        consentButon.click();
     }
     @Test
     public void textBox(){
@@ -34,6 +36,9 @@ public class TextboxTest {
         currentAddress.sendKeys("Floresti");
         permanentAddress.sendKeys("Peceiu");
 
+        WebElement submit= driver.findElement(By.id("submit"));
+        submit.click();
+
         WebElement outputname = driver.findElement(By.id("userName"));
         WebElement outputEmail = driver.findElement(By.id("userEmail"));
         WebElement outputCurrentAddress = driver.findElement(By.id("currentAddress"));
@@ -45,7 +50,7 @@ public class TextboxTest {
         Assert.assertTrue(true, outputPermanentAddress.getText());
 
 
-        sleep(9000);
+       // sleep(9000);
 
 
 
@@ -61,7 +66,7 @@ public class TextboxTest {
     @AfterTest
     public void tearDown(){
         if (driver != null) {
-        driver.close();
+        //driver.close();
         }
     }
 

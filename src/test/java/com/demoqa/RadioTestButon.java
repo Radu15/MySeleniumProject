@@ -20,6 +20,8 @@ public class RadioTestButon {
             driver = new ChromeDriver();
             driver.get(url);
             driver.manage().window().maximize();
+            WebElement consentButon= driver.findElement(By.xpath("//button[@aria-label=\"Consent\"]"));
+            consentButon.click();
         }
 
         @Test

@@ -21,6 +21,8 @@ public class CheckboxTest {
         driver = new ChromeDriver();
         driver.get(url);
         driver.manage().window().maximize();
+        WebElement consentButon= driver.findElement(By.xpath("//button[@aria-label=\"Consent\"]"));
+        consentButon.click();
     }
 
     @Test
@@ -28,13 +30,12 @@ public class CheckboxTest {
         driver.get(url);
         WebElement checkbox1 = driver.findElement(By.className("rct-checkbox"));
       //  WebElement checkbox2 = driver.findElement(By.xpath("//input[@id='checkBox1']"));
-       // WebElement checkbox3 = driver.findElement(By.xpath("//input[@id='checkBox2']"));
 
         // Verifică dacă caseta de bifare 1 este bifată și dezactivează-o
         Assert.assertFalse(checkbox1.isSelected());
         checkbox1.click();
         Assert.assertFalse(checkbox1.isSelected());
-        sleep(900);
+       // sleep(900);
     }
     public static void sleep(int milisecond){
         try {
